@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import './style.css'
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -19,7 +20,8 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="login-container">
+      <div className="login-box">
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <input 
@@ -36,6 +38,11 @@ const Login = () => {
         />
         <button type="submit">Login</button>
       </form>
+      <div style={{paddingTop: 8}}className="register-link">
+          <span>Not registered yet?</span>
+          <Link to="/register">Sign up</Link>
+        </div>
+      </div>
     </div>
   );
 };

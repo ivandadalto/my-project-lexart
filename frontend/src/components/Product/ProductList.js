@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 import { Link, useNavigate } from 'react-router-dom';
+import './style.css';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -29,18 +30,36 @@ const ProductList = () => {
   };
 
   return (
-    <div>
+    <div className="products-container">
       <h2>Products</h2>
-      <Link to="/add-product">Add Product</Link>
-      <ul>
-        {products.map(product => (
-          <li key={product.id}>
-            {product.name} - {product.brand} - {product.model} - ${product.price} - {product.color}
-            <button onClick={() => navigate(`/edit-product/${product.id}`)}>Edit</button>
-            <button onClick={() => handleDelete(product.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <Link to="/add-product" className="add-product-link">Add Product</Link>
+      <table className="products-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Price</th>
+            <th>Color</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map(product => (
+            <tr key={product.id} className="product-item">
+              <td>{product.name}</td>
+              <td>{product.brand}</td>
+              <td>{product.model}</td>
+              <td>${product.price}</td>
+              <td>{product.color}</td>
+              <td>
+                <button className="edit-button" onClick={() => navigate(`/edit-product/${product.id}`)}>Edit</button>
+                <button className="delete-button" onClick={() => handleDelete(product.id)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

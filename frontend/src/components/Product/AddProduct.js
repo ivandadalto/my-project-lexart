@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const AddProduct = () => {
   const [name, setName] = useState('');
@@ -21,41 +21,43 @@ const AddProduct = () => {
   };
 
   return (
-    <div>
-      <h2>Add Product</h2>
-      <form onSubmit={handleAddProduct}>
-        <input 
-          type="text" 
-          placeholder="Name" 
-          value={name} 
-          onChange={(e) => setName(e.target.value)} 
-        />
-        <input 
-          type="text" 
-          placeholder="Brand" 
-          value={brand} 
-          onChange={(e) => setBrand(e.target.value)} 
-        />
-        <input 
-          type="text" 
-          placeholder="Model" 
-          value={model} 
-          onChange={(e) => setModel(e.target.value)} 
-        />
-        <input 
-          type="number" 
-          placeholder="Price" 
-          value={price} 
-          onChange={(e) => setPrice(e.target.value)} 
-        />
-        <input 
-          type="text" 
-          placeholder="Color" 
-          value={color} 
-          onChange={(e) => setColor(e.target.value)} 
-        />
-        <button type="submit">Add Product</button>
-      </form>
+    <div className="add-product-container">
+      <div className="add-product-box">
+        <h2>Add Product</h2>
+        <form onSubmit={handleAddProduct}>
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Brand"
+            value={brand}
+            onChange={(e) => setBrand(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Model"
+            value={model}
+            onChange={(e) => setModel(e.target.value)}
+          />
+          <input
+            type="number"
+            placeholder="Price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Color"
+            value={color}
+            onChange={(e) => setColor(e.target.value)}
+          />
+          <button type="submit">Add Product</button>
+        </form>
+      </div>
     </div>
   );
 };

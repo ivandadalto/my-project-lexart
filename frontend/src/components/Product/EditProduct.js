@@ -40,41 +40,43 @@ const EditProduct = () => {
   };
 
   return (
-    <div>
-      <h2>Edit Product</h2>
-      <form onSubmit={handleEditProduct}>
-        <input 
-          type="text" 
-          placeholder="Name" 
-          value={name} 
-          onChange={(e) => setName(e.target.value)} 
-        />
-        <input 
-          type="text" 
-          placeholder="Brand" 
-          value={brand} 
-          onChange={(e) => setBrand(e.target.value)} 
-        />
-        <input 
-          type="text" 
-          placeholder="Model" 
-          value={model} 
-          onChange={(e) => setModel(e.target.value)} 
-        />
-        <input 
-          type="number" 
-          placeholder="Price" 
-          value={price} 
-          onChange={(e) => setPrice(e.target.value)} 
-        />
-        <input 
-          type="text" 
-          placeholder="Color" 
-          value={color} 
-          onChange={(e) => setColor(e.target.value)} 
-        />
-        <button type="submit">Edit Product</button>
-      </form>
+    <div className="edit-product-container">
+      <div className="edit-product-box">
+        <h2>Edit Product</h2>
+        <form onSubmit={handleEditProduct}>
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Brand"
+            value={brand}
+            onChange={(e) => setBrand(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Model"
+            value={model}
+            onChange={(e) => setModel(e.target.value)}
+          />
+          <input
+            type="number"
+            placeholder="Price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Color"
+            value={color}
+            onChange={(e) => setColor(e.target.value)}
+          />
+          <button type="submit">Edit Product</button>
+        </form>
+      </div>
     </div>
   );
 };
