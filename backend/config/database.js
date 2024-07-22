@@ -3,7 +3,7 @@ import pg from 'pg';
 
 const DATABASE_URL  = process.env.DATABASE_URL
 
-const sequelize = new Sequelize(DATABASE_URL, {
+const sequelize = new Sequelize("verceldb", "default", "tjgmDUOzF2M8", {
   host: process.env.DATABASE_URL,
   dialect: 'postgres',
   dialectModule: pg,
