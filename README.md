@@ -1,4 +1,4 @@
-#Gerenciador de Produtos e Login
+Gerenciador de Produtos e Login
 Este é um aplicativo web full-stack para gerenciar produtos (celulares) e realizar o login de usuários. O backend foi desenvolvido com Node.js, Express.js, Sequelize e PostgreSQL, enquanto o frontend foi desenvolvido com React.
 
 Funcionalidades
