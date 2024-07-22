@@ -1,4 +1,4 @@
-const { Sequelize, DATE } = require('sequelize');
+const { Sequelize } = require('sequelize');
 import pg from 'pg';
 
 const DATABASE_URL  = process.env.DATABASE_URL
