@@ -1,12 +1,11 @@
 const { Sequelize } = require('sequelize');
-import pg from 'pg';
+const { Pool } = require('pg')
 
 const DATABASE_URL  = process.env.DATABASE_URL
 
 const sequelize = new Sequelize(DATABASE_URL, {
-  host: process.env.DATABASE_URL,
   dialect: 'postgres',
-  dialectModule: pg,
+  dialectModule: Pool,
   dialectOptions: {
     ssl: {
       require: true,
